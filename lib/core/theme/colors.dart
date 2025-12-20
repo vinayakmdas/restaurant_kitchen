@@ -10,11 +10,11 @@ class AppColors {
   
   // Background Colors
   static const Color backgroundDark = Color(0xFF0A0A0A); // Main dark background
-  static const Color cardDarkPurple = Color(0xFF2D1B4E); // New Orders card background
+  static const Color cardDarkPurple = Color.fromARGB(255, 80, 38, 102); // New Orders card background
   static const Color cardDarkBrown = Color(0xFF431407); // Preparing card background
   static const Color cardDarkGreen = Color(0xFF064E3B); // Completed card background
   static const Color cardDark = Color(0xFF111827); // Order item card background
-  
+   
   // Text Colors
   static const Color textWhite = Color(0xFFFFFFFF);
   static const Color textGray = Color(0xFF9CA3AF);
