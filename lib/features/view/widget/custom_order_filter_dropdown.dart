@@ -3,15 +3,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kitchen_role/core/theme/colors.dart';
-import 'package:kitchen_role/features/controller/order_filter_controller.dart';
+import 'package:kitchen_role/features/controller/kitchen_controller.dart';
 
 
 class OrderFilterDropdown extends StatelessWidget {
-  const OrderFilterDropdown({Key? key}) : super(key: key);
+  const OrderFilterDropdown({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<OrderFilterController>();
+    final controller = Get.find<KitchenController>();
 
     return Obx(() => PopupMenuButton<String>(
       offset: const Offset(0, 55),
@@ -58,7 +58,7 @@ class OrderFilterDropdown extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color: controller.isFocused.value ? AppColors.primaryPurple : Colors.blue,
-            width: 1.5,
+            width: 0.5,
           ),
         ),
         child: Row(

@@ -4,32 +4,50 @@ class BackgroundImage extends StatelessWidget {
   final String imagePath;
   final Widget child;
   final BoxFit fit;
-  final Color? overlayColor;
+  final Gradient? gradient;
 
   const BackgroundImage({
     super.key,
     required this.imagePath,
     required this.child,
     this.fit = BoxFit.cover,
-    this.overlayColor,
+    this.gradient,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(imagePath),
-          fit: fit,
-          colorFilter: overlayColor != null
-              ? ColorFilter.mode(
-                  overlayColor!,
-                  BlendMode.darken,
-                )
-              : null,
-        ),
+    return SizedBox.expand( // 🔥 IMPORTANT
+      child: Stack(
+        children: [
+          // 1️⃣ Background Image
+          Image.asset(
+            imagePath,
+            fit: fit,
+            width: double.infinity,
+            height: double.infinity,
+          ),
+
+          // 2️⃣ Black Gradient Overlay
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: BoxDecoration(
+              gradient: gradient ??
+                  const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.black87,
+                      Colors.transparent,
+                    ],
+                  ),
+            ),
+          ),
+
+          // 3️⃣ Screen Content
+          child,
+        ],
       ),
-      child: child,
     );
   }
 }

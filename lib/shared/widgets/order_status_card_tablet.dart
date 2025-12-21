@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kitchen_role/core/constants/app_text_styles.dart';
 import '../../core/constants/app_spacing.dart';
 import '../../core/constants/app_sizes.dart';
-class OrderStatusCard extends StatelessWidget {
+class OrderStatusCardTablet extends StatelessWidget {
   final String title;
   final String count;
   final IconData icon;
@@ -11,7 +11,7 @@ class OrderStatusCard extends StatelessWidget {
   final Color textColor;
   final Color borderColor; // ✅ add this
 
-  const OrderStatusCard({
+  const OrderStatusCardTablet({
     super.key,
     required this.title,
     required this.count,
