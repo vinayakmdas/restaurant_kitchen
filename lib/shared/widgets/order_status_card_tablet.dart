@@ -19,7 +19,7 @@ class OrderStatusCardTablet extends StatelessWidget {
     required this.backgroundColor,
     required this.iconColor,
     required this.textColor,
-    required this.borderColor, // ✅ required
+    required this.borderColor, 
   });
 
   @override
@@ -29,7 +29,7 @@ class OrderStatusCardTablet extends StatelessWidget {
       color: backgroundColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppSizes.radiusMd),
-        side: BorderSide(              // ✅ border added
+        side: BorderSide(            
           color: borderColor,
           width: 1,
         ),

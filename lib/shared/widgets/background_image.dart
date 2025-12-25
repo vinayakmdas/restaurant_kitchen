@@ -16,10 +16,9 @@ class BackgroundImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox.expand( // 🔥 IMPORTANT
+    return SizedBox.expand( 
       child: Stack(
         children: [
-          // 1️⃣ Background Image
           Image.asset(
             imagePath,
             fit: fit,
@@ -27,7 +26,7 @@ class BackgroundImage extends StatelessWidget {
             height: double.infinity,
           ),
 
-          // 2️⃣ Black Gradient Overlay
+         
           Container(
             width: double.infinity,
             height: double.infinity,
